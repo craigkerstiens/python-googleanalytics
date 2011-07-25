@@ -16,9 +16,8 @@ class GAConnection:
     user_agent = 'python-gapi-1.0'
     auth_token = None
 
-    def __init__(self, google_email=None, google_password=None):
+    def __init__(self, google_email=None, google_password=None, path='/accounts/ClientLogin'):
         authtoken_pat = re.compile(r"Auth=(.*)")
-        path = '/accounts/ClientLogin'
 
         if google_email == None or google_password == None:
             google_email, google_password = config.get_google_credentials()
