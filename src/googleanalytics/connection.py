@@ -22,7 +22,7 @@ class GAConnection:
         if google_email == None or google_password == None:
             google_email, google_password = config.get_google_credentials()
 
-        data = "accountType=GOOGLE&Email=%s&Passwd=%s&service=analytics&source=%s"
+        data = "accountType=HOSTED_OR_GOOGLE&Email=%s&Passwd=%s&service=analytics&source=%s"
         data = data % (google_email, google_password, self.user_agent)
         if DEBUG:
             print "Authenticating with %s / %s" % (google_email, google_password)
